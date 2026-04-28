@@ -1,0 +1,219 @@
+// --- Component: navbar ---
+$navbar-background-default: $color-background-white-default;
+$navbar-menu-icon-default: $color-foreground-primary-dark-default;
+$navbar-menu-icon-hover: $color-foreground-primary-dark-hover;
+$navbar-border-default: $color-border-secondary-medium-default;
+
+// --- Component: hero ---
+$hero-title-default: $color-foreground-on-dark-default;
+$hero-subtitle-default: $color-foreground-on-dark-default;
+
+// --- Component: tab/Navbar ---
+$tab-navbar-selection-indicator-background-active: $color-background-secondary-medium-default;
+$tab-navbar-selection-indicator-background-active-hover: $color-background-secondary-medium-hover;
+$tab-navbar-text-default: $color-foreground-on-white-default;
+$tab-navbar-text-hover: $color-foreground-on-white-hover;
+$tab-navbar-text-selected: $color-foreground-on-white-default;
+$tab-navbar-foreground-selected-hover: $color-foreground-on-white-hover;
+$tab-navbar-icon-default: $color-icon-black-default;
+$tab-navbar-icon-hover: $color-icon-black-hover;
+$tab-navbar-icon-selected: $color-icon-black-default;
+$tab-navbar-icon-selected-hover: $color-icon-black-hover;
+
+// --- Component: button ---
+$button-primary-text-default: $color-foreground-on-primary-dark-default;
+$button-primary-background-default: $color-background-primary-dark-default;
+$button-primary-border-default: $color-border-primary-dark-default;
+$button-primary-text-hover: $color-foreground-on-primary-dark-hover;
+$button-primary-background-hover: $color-background-primary-dark-hover;
+$button-primary-border-hover: $color-border-primary-dark-hover;
+$button-primary-text-disabled: $color-foreground-on-primary-dark-disabled;
+$button-primary-background-disabled: $color-background-primary-dark-disabled;
+$button-primary-border-disabled: $color-border-primary-dark-disabled;
+$button-accent-text-default: $color-foreground-on-secondary-medium-default;
+$button-accent-background-default: $color-background-secondary-medium-default;
+$button-accent-border-default: $color-border-secondary-medium-default;
+$button-accent-text-hover: $color-foreground-on-secondary-medium-hover;
+$button-accent-background-hover: $color-background-secondary-medium-hover;
+$button-accent-border-hover: $color-border-secondary-medium-hover;
+$button-accent-text-disabled: $color-foreground-on-secondary-medium-disabled;
+$button-accent-background-disabled: $color-background-secondary-medium-disabled;
+$button-accent-border-disabled: $color-brand-basic-000-white;
+$button-secondary-text-default: $color-foreground-primary-dark-default;
+$button-secondary-background-default: $color-background-white-default;
+$button-secondary-border-default: $color-border-primary-dark-default;
+$button-secondary-text-hover: $color-foreground-primary-dark-hover;
+$button-secondary-background-hover: $color-background-white-hover;
+$button-secondary-border-hover: $color-border-primary-dark-hover;
+$button-secondary-foreground-disabled: $color-foreground-on-primary-dark-disabled;
+$button-secondary-background-disabled: $color-background-white-default;
+$button-secondary-border-disabled: $color-border-primary-dark-disabled;
+$button-slider-icon-default: $color-brand-basic-000-white;
+$button-slider-icon-hover: $color-brand-basic-000-white;
+$button-slider-background-default: $color-brand-basic-000-white;
+$button-slider-background-hover: $color-brand-basic-000-white;
+
+// --- Component: button/slider-navigation ---
+$button-slider-navigation-background-default: $color-brand-primary-low-alpha;
+$button-slider-navigation-background-hover: $color-brand-primary-700;
+$button-slider-navigation-icon-default: $color-icon-white-default;
+$button-slider-navigation-icon-hover: $color-icon-white-hover;
+
+// --- Component: button/show-filter ---
+$button-show-filter-text-default: $color-foreground-on-light-default;
+$button-show-filter-text-hover: $color-foreground-on-light-hover;
+$button-show-filter-icon-default: $color-icon-black-default;
+$button-show-filter-icon-hover: $color-icon-black-hover;
+$button-show-filter-background-default: $color-background-secondary-light-default;
+$button-show-filter-background-hover: $color-background-secondary-light-hover;
+$button-show-filter-border-default: $color-border-medium-default;
+$button-show-filter-border-hover: $color-border-medium-hover;
+
+// --- Component: tag ---
+$tag-primary-background: $color-background-secondary-medium-default;
+$tag-primary-text: $color-foreground-black-default;
+$tag-secondary-background: $color-background-medium-light-default;
+$tag-secondary-text: $color-foreground-black-default;
+
+// --- Component: indicator/slider ---
+$indicator-slider-background-selected-default: $color-background-secondary-medium-default;
+$indicator-slider-background-selected-hover: $color-background-secondary-medium-hover;
+$indicator-slider-border-selected-default: $color-border-white-default;
+$indicator-slider-border-selected-hover: $color-border-light-hover;
+$indicator-slider-background-default: $color-background-white-high-alpha;
+$indicator-slider-background-hover: $color-background-white-hover;
+$indicator-slider-border-default: $color-border-white-default;
+$indicator-slider-border-hover: $color-border-light-hover;
+
+// --- Component: form/text-input ---
+$form-text-input-background-default: $color-background-white-default;
+$form-text-input-background-hover: $color-background-white-default;
+$form-text-input-background-focus: $color-background-white-default;
+$form-text-input-background-focus-hover: $color-background-white-default;
+$form-text-input-background-disabled: $color-background-input-disabled;
+$form-text-input-border-default: $color-border-primary-dark-default;
+$form-text-input-border-hover: $color-border-primary-dark-hover;
+$form-text-input-border-focus: $color-border-primary-dark-default;
+$form-text-input-border-focus-hover: $color-border-primary-dark-hover;
+$form-text-input-border-disabled: $color-border-input-disabled;
+$form-text-input-label-default: $color-foreground-secondary-dark-default;
+$form-text-input-label-hover: $color-foreground-secondary-dark-hover;
+$form-text-input-label-focus: $color-foreground-secondary-dark-default;
+$form-text-input-label-focus-hover: $color-foreground-secondary-dark-hover;
+$form-text-input-label-disabled: $color-foreground-input-light-disabled;
+$form-text-input-placeholder-default: $color-foreground-medium-light-default;
+$form-text-input-placeholder-hover: $color-foreground-medium-light-hover;
+$form-text-input-placeholder-focus: $color-border-input-disabled;
+$form-text-input-placeholder-focus-hover: $color-border-input-disabled;
+$form-text-input-placeholder-disabled: $color-foreground-input-light-disabled;
+$form-text-input-text-default: $color-foreground-text-on-light-default;
+$form-text-input-text-hover: $color-foreground-text-on-light-hover;
+$form-text-input-text-focus: $color-foreground-text-on-light-default;
+$form-text-input-text-focus-hover: $color-foreground-text-on-light-hover;
+$form-text-input-icon-default: $color-icon-primary-dark-default;
+$form-text-input-icon-hover: $color-icon-primary-dark-hover;
+$form-text-input-icon-focus: $color-icon-primary-dark-default;
+$form-text-input-icon-focus-hover: $color-icon-primary-dark-hover;
+$form-text-input-icon-disabled: $color-icon-disabled;
+$form-text-input-chevron-default: $color-icon-primary-dark-default;
+$form-text-input-chevron-hover: $color-icon-primary-dark-hover;
+$form-text-input-chevron-focus: $color-icon-primary-dark-default;
+$form-text-input-chevron-focus-hover: $color-icon-primary-dark-hover;
+$form-text-input-chevron-disabled: $color-icon-disabled;
+$form-text-input-text-disabled: $color-foreground-text-dark-disabled;
+
+// --- Component: form/checkbox ---
+$form-checkbox-box-background-default: $color-background-white-default;
+$form-checkbox-box-background-hover: $color-background-white-default;
+$form-checkbox-box-background-selected: $color-background-secondary-medium-default;
+$form-checkbox-box-background-selected-hover: $color-background-secondary-medium-hover;
+$form-checkbox-check-icon-default: $color-icon-primary-dark-default;
+$form-checkbox-check-icon-hover: $color-icon-primary-dark-hover;
+$form-checkbox-box-border-default: $color-border-primary-dark-default;
+$form-checkbox-box-border-hover: $color-border-primary-dark-hover;
+$form-checkbox-box-border-selected: $color-border-primary-dark-default;
+$form-checkbox-box-border-selected-hover: $color-border-primary-dark-hover;
+$form-checkbox-text-default: $color-foreground-on-white-default;
+$form-checkbox-text-hover: $color-foreground-on-white-hover;
+$form-checkbox-text-selected: $color-foreground-on-white-default;
+$form-checkbox-foreground-selected-hover: $color-foreground-on-white-hover;
+
+// --- Component: card ---
+$card-background-default: $color-background-white-default;
+$card-background-hover: $color-background-white-default;
+$card-title-default: $color-foreground-title-default;
+$card-title-hover: $color-foreground-title-default;
+$card-text-default: $color-foreground-text-on-light-default;
+$card-text-hover: $color-foreground-text-on-light-hover;
+$card-top-price-text: $color-foreground-on-light-default;
+$card-price: $color-foreground-on-light-default;
+$card-breakdown-foreground-default: $color-foreground-primary-dark-default;
+$card-breakdown-foreground-hover: $color-foreground-primary-dark-hover;
+$card-breakdown-chevron-default: $color-foreground-primary-dark-default;
+$card-breakdown-chevron-hover: $color-foreground-primary-dark-hover;
+
+// --- Component: card/circuit-card ---
+$card-circuit-bottom-bar-background-default: $color-background-secondary-light-default;
+$card-circuit-bottom-bar-background-hover: $color-background-secondary-light-default;
+
+// --- Component: filters ---
+$filters-section-title-default: $color-foreground-on-light-default;
+$filters-filter-name-text-default: $color-foreground-on-light-default;
+$filters-filter-name-text-hover: $color-foreground-on-light-default;
+$filters-filter-name-text-open: $color-foreground-secondary-dark-default;
+$filters-filter-name-text-open-hover: $color-foreground-secondary-dark-hover;
+$filters-icon-default: $color-foreground-on-light-default;
+$filters-icon-hover: $color-foreground-on-light-default;
+$filters-icon-open: $color-icon-secondary-dark-default;
+$filters-icon-open-hover: $color-foreground-on-light-default;
+$filters-chevron-default: $color-foreground-on-light-default;
+$filters-chevron-hover: $color-foreground-on-light-default;
+$filters-chevron-open: $color-icon-secondary-dark-default;
+$filters-chevron-open-hover: $color-foreground-on-light-default;
+$filters-link-default: $color-foreground-link-default;
+$filters-link-hover: $color-foreground-link-hover;
+$filters-divisor: $color-divisor-light;
+
+// --- Component: search ---
+$search-background-default: $color-background-secondary-medium-light-default;
+$search-title-default: $color-foreground-primary-dark-default;
+$search-summary-background-default: $color-background-secondary-light-default;
+$search-summary-border-default: $color-border-medium-default;
+$search-text-default: $color-foreground-text-on-light-default;
+
+// --- Component: overlay ---
+$overlay-close-icon-default: $color-icon-black-default;
+$overlay-close-icon-hover: $color-icon-black-hover;
+$overlay-background-default: $color-background-white-default;
+$overlay-border-default: $color-border-medium-default;
+$overlay-top-bar-default: $color-background-secondary-light-default;
+$overlay-bottom-bar-default: $color-background-secondary-light-default;
+$overlay-bar-text-default: $color-foreground-text-on-light-default;
+$overlay-bar-text-hover: $color-foreground-text-on-light-hover;
+$overlay-title-default: $color-foreground-title-default;
+$overlay-text-default: $color-foreground-text-on-light-default;
+$overlay-price-default: $color-foreground-text-on-light-default;
+$overlay-link-default: $color-foreground-link-default;
+$overlay-link-hover: $color-foreground-link-hover;
+$overlay-alpha-background-default: $color-background-basic-medium-alpha;
+
+// --- Component: overlay/modal ---
+$overlay-modal-price-box-border-default: $color-border-primary-dark-default;
+$overlay-modal-price-box-background-default: $color-background-secondary-light-default;
+
+// --- Component: contact ---
+$contact-title-default: $color-foreground-primary-dark-default;
+$contact-text-default: $color-brand-primary-800;
+$contact-link-default: $color-foreground-link-default;
+$contact-link-hover: $color-foreground-link-hover;
+$contact-social-media-icon-default: $color-icon-white-default;
+$contact-social-media-icon-hover: $color-icon-white-hover;
+$contact-social-media-background-default: $color-background-primary-dark-default;
+$contact-social-media-background-hover: $color-background-primary-dark-hover;
+
+// --- Component: footer ---
+$footer-background-default: $color-background-secondary-light-default;
+$footer-list-item-text-default: $color-foreground-on-light-default;
+$footer-list-item-text-hover: $color-foreground-on-light-hover;
+$footer-background-bottom-bar-default: $color-background-medium-light-default;
+$footer-foreground-bottom-bar-default: $color-foreground-primary-dark-default;

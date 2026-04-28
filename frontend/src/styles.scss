@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+@use 'styles/abstracts/variables-global' as *;
+@use 'styles/abstracts/variables-semantic' as *;
+@use 'styles/abstracts/variables-components' as *;
+@use 'styles/abstracts/mixins' as *;
+@use 'styles/abstracts/variables-spacing' as *;
+@use 'styles/base/reset';
+@use 'styles/base/typography';

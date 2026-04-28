@@ -1,0 +1,17 @@
+// Breakpoints basados en lo que hay en Figma
+$breakpoints: (
+  'tablet-sm': 744px,
+  'tablet-lg': 1023px,
+  'desktop': 1440px
+);
+
+@mixin respond-to($bp) {
+  @media (min-width: map-get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+//Convertir px en rem
+@function rem($px) {
+  @return #{$px / 16}rem;
+}
