@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // Breakpoints basados en lo que hay en Figma
 $breakpoints: (
   'tablet-sm': 744px,
@@ -13,5 +15,5 @@ $breakpoints: (
 
 //Convertir px en rem
 @function rem($px) {
-  @return #{$px / 16}rem;
+  @return math.div($px, 16) * 1rem;
 }

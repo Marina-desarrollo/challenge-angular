@@ -1,0 +1,9 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/variables-spacing' as *;
+
+.home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-mobile;    
+}
