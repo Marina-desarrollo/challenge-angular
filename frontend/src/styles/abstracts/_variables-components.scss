@@ -1,5 +1,8 @@
+@use './variables-global' as *;
+@use './variables-semantic' as *;
+
 // --- Component: navbar ---
-$navbar-background-default: $color-background-white-default;
+$navbar-background-default: $color-background-default;
 $navbar-menu-icon-default: $color-foreground-primary-dark-default;
 $navbar-menu-icon-hover: $color-foreground-primary-dark-hover;
 $navbar-border-default: $color-border-secondary-medium-default;
@@ -40,13 +43,13 @@ $button-accent-text-disabled: $color-foreground-on-secondary-medium-disabled;
 $button-accent-background-disabled: $color-background-secondary-medium-disabled;
 $button-accent-border-disabled: $color-brand-basic-000-white;
 $button-secondary-text-default: $color-foreground-primary-dark-default;
-$button-secondary-background-default: $color-background-white-default;
+$button-secondary-background-default: $color-background-default;
 $button-secondary-border-default: $color-border-primary-dark-default;
 $button-secondary-text-hover: $color-foreground-primary-dark-hover;
 $button-secondary-background-hover: $color-background-white-hover;
 $button-secondary-border-hover: $color-border-primary-dark-hover;
 $button-secondary-foreground-disabled: $color-foreground-on-primary-dark-disabled;
-$button-secondary-background-disabled: $color-background-white-default;
+$button-secondary-background-disabled: $color-background-default;
 $button-secondary-border-disabled: $color-border-primary-dark-disabled;
 $button-slider-icon-default: $color-brand-basic-000-white;
 $button-slider-icon-hover: $color-brand-basic-000-white;
@@ -86,10 +89,10 @@ $indicator-slider-border-default: $color-border-white-default;
 $indicator-slider-border-hover: $color-border-light-hover;
 
 // --- Component: form/text-input ---
-$form-text-input-background-default: $color-background-white-default;
-$form-text-input-background-hover: $color-background-white-default;
-$form-text-input-background-focus: $color-background-white-default;
-$form-text-input-background-focus-hover: $color-background-white-default;
+$form-text-input-background-default: $color-background-default;
+$form-text-input-background-hover: $color-background-default;
+$form-text-input-background-focus: $color-background-default;
+$form-text-input-background-focus-hover: $color-background-default;
 $form-text-input-background-disabled: $color-background-input-disabled;
 $form-text-input-border-default: $color-border-primary-dark-default;
 $form-text-input-border-hover: $color-border-primary-dark-hover;
@@ -123,8 +126,8 @@ $form-text-input-chevron-disabled: $color-icon-disabled;
 $form-text-input-text-disabled: $color-foreground-text-dark-disabled;
 
 // --- Component: form/checkbox ---
-$form-checkbox-box-background-default: $color-background-white-default;
-$form-checkbox-box-background-hover: $color-background-white-default;
+$form-checkbox-box-background-default: $color-background-default;
+$form-checkbox-box-background-hover: $color-background-default;
 $form-checkbox-box-background-selected: $color-background-secondary-medium-default;
 $form-checkbox-box-background-selected-hover: $color-background-secondary-medium-hover;
 $form-checkbox-check-icon-default: $color-icon-primary-dark-default;
@@ -139,8 +142,8 @@ $form-checkbox-text-selected: $color-foreground-on-white-default;
 $form-checkbox-foreground-selected-hover: $color-foreground-on-white-hover;
 
 // --- Component: card ---
-$card-background-default: $color-background-white-default;
-$card-background-hover: $color-background-white-default;
+$card-background-default: $color-background-default;
+$card-background-hover: $color-background-default;
 $card-title-default: $color-foreground-title-default;
 $card-title-hover: $color-foreground-title-default;
 $card-text-default: $color-foreground-text-on-light-default;
@@ -184,7 +187,7 @@ $search-text-default: $color-foreground-text-on-light-default;
 // --- Component: overlay ---
 $overlay-close-icon-default: $color-icon-black-default;
 $overlay-close-icon-hover: $color-icon-black-hover;
-$overlay-background-default: $color-background-white-default;
+$overlay-background-default: $color-background-default;
 $overlay-border-default: $color-border-medium-default;
 $overlay-top-bar-default: $color-background-secondary-light-default;
 $overlay-bottom-bar-default: $color-background-secondary-light-default;

@@ -1,3 +1,5 @@
+@use './variables-global' as *;
+
 // --- Semantic: color/background ---
 $color-background-white-high-alpha: $color-brand-basic-000-white-high-alpha;
 $color-background-default: $color-brand-basic-000-white;
@@ -13,7 +15,7 @@ $color-background-dark-hover: $color-brand-basic-000-white;
 $color-background-black-default: $color-brand-basic-000-white;
 $color-background-black-hover: $color-brand-basic-000-white;
 $color-background-primary-low-alpha: $color-brand-primary-low-alpha;
-$color-background-primary-light-default: $color-brand-primary-150;
+$color-background-primary-light-default: $color-brand-primary-050;
 $color-background-primary-light-hover: $color-brand-primary-100;
 $color-background-primary-medium-default: $color-brand-basic-000-white;
 $color-background-primary-medium-hover: $color-brand-basic-000-white;
@@ -38,7 +40,7 @@ $color-background-basic-medium-alpha: $color-brand-basic-medium-alpha;
 
 // --- Semantic: color/foreground ---
 $color-foreground-white-default: $color-brand-basic-000-white;
-$color-foreground-white-hover: $color-brand-000-white;
+$color-foreground-white-hover: $color-brand-basic-000-white;
 $color-foreground-on-white-default: $color-brand-basic-800;
 $color-foreground-on-white-hover: $color-brand-basic-900;
 $color-foreground-light-default: $color-brand-basic-050;
