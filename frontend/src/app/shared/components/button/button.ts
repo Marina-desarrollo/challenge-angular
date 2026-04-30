@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'button[app-button]',
@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
     '[class]': '"btn btn--" + variant + " btn--" + size',
     '[disabled]': 'disabled || null',
   },
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './button.html',
   styleUrl: './button.scss',
 })
