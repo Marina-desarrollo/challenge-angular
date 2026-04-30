@@ -1,0 +1,78 @@
+<div class="navbar__container">
+  <a href="/" class="navbar__logo">
+    <img src="images/header-logo.svg" alt="Waveless" />
+  </a>
+
+  <ul class="navbar__menu">
+    <li class="navbar__menu-item">
+      <a href="#" class="navbar__menu-link navbar__menu-link--active">Aventura</a>
+    </li>
+    <li class="navbar__menu-item">
+      <a href="#" class="navbar__menu-link">Destinos</a>
+    </li>
+    <li class="navbar__menu-item">
+      <a href="#" class="navbar__menu-link">Alojamiento</a>
+    </li>
+    <li class="navbar__menu-item navbar__menu-item--separated">
+      <a href="#" class="navbar__menu-link">Sobre nosotros</a>
+    </li>
+  </ul>
+
+  <button app-button variant="primary" size="base" class="navbar__reserve-btn">Reserva</button>
+
+  <button class="navbar__menu-btn"
+          aria-label="Abrir menú"
+          (click)="toggleMenu()">
+    <img src="icons/burgerMenu.svg" alt="">
+  </button>
+</div>
+
+<div class="navbar__overlay"
+     [class.navbar__overlay--open]="isMenuOpen"
+     (click)="toggleMenu()">
+</div>
+
+<div class="navbar__drawer"
+     [class.navbar__drawer--open]="isMenuOpen">
+  <button class="navbar__close-btn"
+          aria-label="Cerrar menú"
+          (click)="toggleMenu()">
+    <img src="icons/close.svg" alt=""/>
+  </button>
+  <ul class="navbar__menu-mobile">
+    <li class="navbar__menu-item">
+      <a href="#" class="navbar__menu-link navbar__menu-link--active"
+         (click)="toggleMenu()">
+        <span class="navbar__menu-category-icon">
+          <img src="icons/icon-aventura.svg" alt="" />
+        </span>
+        Aventura
+      </a>
+    </li>
+    <li class="navbar__menu-item">
+      <a href="#" class="navbar__menu-link"
+         (click)="toggleMenu()">
+        <span class="navbar__menu-category-icon">
+          <img src="icons/icon-destinos.svg" alt="" />
+        </span>
+        Destinos
+      </a>
+    </li>
+    <li class="navbar__menu-item">
+      <a href="#" class="navbar__menu-link"
+         (click)="toggleMenu()">
+        <span class="navbar__menu-category-icon">
+          <img src="icons/icon-alojamiento.svg" alt="" />
+        </span>
+        Alojamiento
+      </a>
+    </li>
+    <li class="navbar__menu-item">
+      <a href="#" class="navbar__menu-link"
+         (click)="toggleMenu()">
+        Sobre nosotros
+      </a>
+    </li>
+  </ul>
+  <button app-button variant="primary" size="lg" class="navbar__reserve-btn-mobile">Reserva</button>
+</div>

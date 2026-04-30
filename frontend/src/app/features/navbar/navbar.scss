@@ -1,0 +1,233 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/variables-spacing' as *;
+@use '../../../styles/abstracts/variables-components' as *;
+@use '../../../styles/base/typography' as *;
+
+.navbar {
+    display: block;
+    width: 100%;
+    background-color: $navbar-background-default;
+    border-bottom: 1px solid $navbar-border-default;
+    position: relative;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: rem(12) rem(16);
+
+        @include respond-to('tablet-lg') {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 rem(32);
+            min-height: rem(80);
+        }
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: auto;
+            height: rem(24);
+            @include respond-to('tablet-lg') {
+                height: rem(32);
+            }
+        }
+    }
+
+    &__menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: rem(5);
+        padding: rem(8);
+
+        @include respond-to('tablet-lg') {
+            display: none;
+        }
+    }
+
+    &__menu-icon {
+        display: block;
+        width: rem(24);
+        height: rem(2);
+        background-color: $navbar-menu-icon-default;
+        border-radius: rem(2);
+        transition: background-color 0.2s ease;
+    }
+
+    &__menu-btn:hover &__menu-icon {
+        background-color: $navbar-menu-icon-hover;
+    }
+
+    // Overlay oscurito
+    &__overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 200;
+
+        &--open {
+            display: block;
+
+            @include respond-to('tablet-lg') {
+                display: none;
+            }
+        }
+    }
+
+    // Drawer mobile
+    &__drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: rem(280);
+        height: 100vh;
+        background-color: $overlay-top-bar-default;
+        z-index: 300;
+        display: flex;
+        flex-direction: column;
+        padding: rem(16);
+        gap: rem(32);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+
+        &--open {
+            transform: translateX(0);
+        }
+
+        @include respond-to('tablet-lg') {
+            display: none;
+        }
+    }
+    
+    &__close-btn {
+        align-self: flex-end;
+        padding: rem(8);
+        color: $navbar-menu-icon-default;        
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $navbar-menu-icon-hover;
+        }
+    }
+
+    &__menu-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: rem(16);
+    }
+
+    // Iconos menu movil
+    &__menu-category-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(24);
+        height: rem(24);
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__menu {
+        display: none;
+
+        @include respond-to('tablet-lg') {
+            display: flex;
+            flex-direction: row;
+            gap: rem(72);
+            justify-content: center;
+        }
+    }
+    
+    &__menu-item {
+        &--separated {
+            margin-left: rem(22);
+        }
+    }
+
+    &__menu-link {
+        display: flex;
+        align-items: center;
+        gap: rem(6);
+        font-size: $font-size-base;
+        color: $tab-navbar-text-default;
+        font-weight: 600;
+        transition: color 0.2s ease;
+        position: relative;
+
+        @include respond-to('tablet-lg') {
+            padding: rem(8) rem(12);
+
+            // Línea sobre el borde inferior del navbar
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -1.3rem;
+                left: 0;
+                width: 100%;
+                height: rem(2);
+                background-color: $tab-navbar-selection-indicator-background-active;
+                opacity: 0;
+                transition: opacity 0.2s ease;
+            }
+    
+            // Triángulo
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -1.3rem;
+                left: 50%;
+                transform: translateX(-50%);
+                border-left: rem(9) solid transparent;
+                border-right: rem(9) solid transparent;
+                border-bottom: rem(12) solid $tab-navbar-selection-indicator-background-active;
+                opacity: 0;
+                transition: opacity 0.2s ease;
+            }
+    
+            &--active {
+                color: $tab-navbar-text-selected;
+    
+                &::after,
+                &::before {
+                    opacity: 1;
+                }
+            }
+    
+            &:hover {
+                color: $tab-navbar-text-hover;
+                font-weight: 700;
+    
+                &::after {
+                    opacity: 1;
+                    background-color: $tab-navbar-selection-indicator-background-active-hover;
+                }
+    
+                &::before {
+                    opacity: 1;
+                    border-top-color: $tab-navbar-selection-indicator-background-active-hover;
+                }
+            }
+        }
+    }
+
+    .navbar &__reserve-btn {
+        display: none;
+
+        @include respond-to('tablet-lg') {
+            display: inline-flex;
+            width: rem(139);            
+        }
+    }
+
+    &__reserve-btn-mobile {
+        width: 100%;
+    }
+}
