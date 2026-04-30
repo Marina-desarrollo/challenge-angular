@@ -1,0 +1,33 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/variables-spacing' as *;
+@use '../../../styles/abstracts/variables-components' as *;
+
+.footer {
+    display: block;
+    width: 100%;
+
+    &__main {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: rem(48) rem(32);
+        background-color: $footer-background-default;
+
+        @include respond-to('desktop') {
+            justify-content: center;
+        }
+    }
+
+    &__bottom-bar{
+        background-color: $footer-background-bottom-bar-default;
+        padding: rem(16);
+
+    }
+
+    &__copyright {
+        text-align: center;
+        font-size: $font-size-sm;
+        color: $footer-foreground-bottom-bar-default;
+        font-weight: 700;
+    }
+}
