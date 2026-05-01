@@ -82,6 +82,7 @@
         padding: rem(12) rem(16);
         gap: rem(8);        
         background-color: $card-circuit-bottom-bar-background-default;
+        border-radius: 0 0 rem(24) rem(24);
 
         @include respond-to('tablet-sm') {
             flex-direction: row;

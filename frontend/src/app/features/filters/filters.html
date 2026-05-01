@@ -1,0 +1,120 @@
+<div class="filters__header">
+  <h3 class="filters__title">Filtrar mi búsqueda</h3>
+  <button class="filters__close" (click)="close.emit()">
+    <img src="icons/close.svg" alt="Cerrar">
+  </button>
+</div>
+
+<ul class="filters__sections">
+
+  <!-- Destinos -->
+  <li class="filters__section">
+    <div class="filters__section-header">
+      <div class="filters__section-title-wrapper">
+        <img src="icons/icon-destinos.svg" alt="" class="filters__section-icon" />
+        <span class="filters__section-title">Destinos</span>
+      </div>
+      <svg class="filters__section-chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M15.2897 11.2918C15.6816 11.6826 15.6816 12.3174 15.2897 12.7081L10.2195 17.7629C9.82927 18.152 9.19776 18.152 8.80748 17.7629L8.71033 17.666C8.31837 17.2753 8.31838 16.6405 8.71033 16.2497L12.973 12L8.71033 7.75024C8.31838 7.35947 8.31838 6.72465 8.71033 6.33388L8.80748 6.23703C9.19776 5.84793 9.82927 5.84793 10.2195 6.23703L15.2897 11.2918Z" fill="currentColor"/>
+      </svg>
+    </div>
+  </li>
+
+  <!-- Aventura -->
+  <li class="filters__section" [class.filters__section--open]="isAventuraOpen">
+    <div class="filters__section-header" (click)="toggleAventura()">
+      <div class="filters__section-title-wrapper">
+        <svg class="filters__section-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <g clip-path="url(#clip0_17303_1593)">
+            <path d="M15.375 6.75C16.4105 6.75 17.25 5.91053 17.25 4.875C17.25 3.83947 16.4105 3 15.375 3C14.3395 3 13.5 3.83947 13.5 4.875C13.5 5.91053 14.3395 6.75 15.375 6.75Z" stroke="currentColor" stroke-width="1.34" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M0.75 18.7501L7.60312 7.11948C7.6693 7.0067 7.76381 6.91318 7.87728 6.84819C7.99075 6.78321 8.11924 6.74902 8.25 6.74902C8.38076 6.74902 8.50925 6.78321 8.62272 6.84819C8.73619 6.91318 8.8307 7.0067 8.89688 7.11948L15.75 18.7501H0.75Z" stroke="currentColor" stroke-width="1.34" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4.7207 12H11.7801" stroke="currentColor" stroke-width="1.34" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13.7451 15.3476L16.8445 10.1173C16.9109 10.0054 17.0053 9.91265 17.1184 9.84826C17.2315 9.78386 17.3594 9.75 17.4895 9.75C17.6196 9.75 17.7475 9.78386 17.8606 9.84826C17.9737 9.91265 18.0681 10.0054 18.1345 10.1173L23.2504 18.7498H15.7504" stroke="currentColor" stroke-width="1.34" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_17303_1593">
+              <rect width="24" height="24" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+        <span class="filters__section-title">Aventura</span>
+      </div>
+      <svg class="filters__section-chevron" 
+          [class.filters__section-chevron--open]="isAventuraOpen"
+          xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M15.2897 11.2918C15.6816 11.6826 15.6816 12.3174 15.2897 12.7081L10.2195 17.7629C9.82927 18.152 9.19776 18.152 8.80748 17.7629L8.71033 17.666C8.31837 17.2753 8.31838 16.6405 8.71033 16.2497L12.973 12L8.71033 7.75024C8.31838 7.35947 8.31838 6.72465 8.71033 6.33388L8.80748 6.23703C9.19776 5.84793 9.82927 5.84793 10.2195 6.23703L15.2897 11.2918Z" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <ul class="filters__options" *ngIf="isAventuraOpen">
+      <li *ngFor="let option of aventuraOptions">
+        <label app-checkbox
+          [label]="option.label"
+          [checked]="option.checked"
+          [tooltip]="option.tooltip"
+          (checkedChange)="onCheckboxChange(option.label, $event)">
+        </label>
+      </li>
+    </ul>
+  </li>
+
+  <!-- Alojamiento -->
+  <li class="filters__section">
+    <div class="filters__section-header">
+      <div class="filters__section-title-wrapper">
+        <img src="icons/icon-alojamiento.svg" alt="" class="filters__section-icon" />
+        <span class="filters__section-title">Alojamiento</span>
+      </div>
+      <svg class="filters__section-chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M15.2897 11.2918C15.6816 11.6826 15.6816 12.3174 15.2897 12.7081L10.2195 17.7629C9.82927 18.152 9.19776 18.152 8.80748 17.7629L8.71033 17.666C8.31837 17.2753 8.31838 16.6405 8.71033 16.2497L12.973 12L8.71033 7.75024C8.31838 7.35947 8.31838 6.72465 8.71033 6.33388L8.80748 6.23703C9.19776 5.84793 9.82927 5.84793 10.2195 6.23703L15.2897 11.2918Z" fill="currentColor"/>
+      </svg>
+    </div>
+  </li>
+
+  <!-- Precio -->
+  <li class="filters__section" [class.filters__section--open]="isPrecioOpen">
+    <div class="filters__section-header" (click)="togglePrecio()">
+      <div class="filters__section-title-wrapper">
+        <svg class="filters__section-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <g clip-path="url(#clip0_17366_4410)">
+            <path d="M3.96937 12.9694C3.82899 12.8288 3.75009 12.6383 3.75 12.4397V3.75H12.4397C12.6383 3.75009 12.8288 3.82899 12.9694 3.96937L22.2806 13.2806C22.4212 13.4213 22.5001 13.612 22.5001 13.8108C22.5001 14.0096 22.4212 14.2003 22.2806 14.3409L14.3437 22.2806C14.2031 22.4212 14.0124 22.5001 13.8136 22.5001C13.6148 22.5001 13.4241 22.4212 13.2834 22.2806L3.96937 12.9694Z" stroke="currentColor" stroke-width="1.2672" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7.875 7.38379C8.14639 7.38379 8.36621 7.60361 8.36621 7.875C8.36621 8.14639 8.14639 8.36621 7.875 8.36621C7.60361 8.36621 7.38379 8.14639 7.38379 7.875C7.38379 7.60361 7.60361 7.38379 7.875 7.38379Z" stroke="currentColor" stroke-width="1.2672"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_17366_4410">
+              <rect width="24" height="24" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>        
+        <span class="filters__section-title">Precio</span>
+      </div>
+      <svg class="filters__section-chevron" 
+        [class.filters__section-chevron--open]="isPrecioOpen"
+        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M15.2897 11.2918C15.6816 11.6826 15.6816 12.3174 15.2897 12.7081L10.2195 17.7629C9.82927 18.152 9.19776 18.152 8.80748 17.7629L8.71033 17.666C8.31837 17.2753 8.31838 16.6405 8.71033 16.2497L12.973 12L8.71033 7.75024C8.31838 7.35947 8.31838 6.72465 8.71033 6.33388L8.80748 6.23703C9.19776 5.84793 9.82927 5.84793 10.2195 6.23703L15.2897 11.2918Z" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <div class="filters__price" *ngIf="isPrecioOpen">
+      <div class="filters__price-input-wrapper">
+        <img src="icons/price.svg" alt="" class="filters__price-icon" />
+        <input 
+          type="number" 
+          class="filters__price-input" 
+          placeholder="Mínimo"
+          [(ngModel)]="minPrice"
+        />
+      </div>
+      <div class="filters__price-input-wrapper">
+        <img src="icons/price.svg" alt="" class="filters__price-icon" />
+        <input 
+          type="number" 
+          class="filters__price-input" 
+          placeholder="Máximo"
+          [(ngModel)]="maxPrice"
+        />
+      </div>
+    </div>
+  </li>
+
+</ul>

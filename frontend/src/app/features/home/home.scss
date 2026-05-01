@@ -123,13 +123,53 @@
         }
     }
 
+    &__filters-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 200;
+
+        &--open {
+            display: block;
+
+            @include respond-to('desktop') {
+                display: none;
+            }
+        }
+    }
+
     &__filters {
         display: none;
+        position: fixed;
+        inset: 0;
+        background-color: $button-show-filter-background-default;
+        z-index: 300;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
 
-        @include respond-to('desktop') {
+        &--open {
             display: block;
-            width: rem(220);
-            flex-shrink: 0;
+            transform: translateX(0);
+        }
+
+        @include respond-to('tablet-sm') {
+            inset: auto;
+            top: 0;
+            left: 0;
+            width: rem(320);
+            height: 100vh;
+        }
+
+        @include respond-to('desktop') {            
+            display: block;
+            position: sticky;
+            width: rem(264);
+            border-radius: rem(24);
+            height: auto;
+            transform: none;
+            overflow-y: visible;
         }
     }
 

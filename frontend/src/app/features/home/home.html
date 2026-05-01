@@ -1,25 +1,33 @@
 <section class="home__hero">
     <p>Aquí hero</p>
 </section>
+
 <section class="home__content">
     <div class="home__intro">
         <h1 class="home__intro-title">Vive tus propias aventuras</h1>
         <p class="home__intro-subtitle">Para los que les gusta explorar y conocer mundo sin complejos</p>
     </div>
-
     
     <div class="home__body">
-        <button class="home__filters-btn">
+        <button class="home__filters-btn" (click)="toggleFilters()">
             <img src="icons/filter-btn.png" alt="">
             Ver filtros
         </button>
 
-        <aside class="home__filters">
-            <p>filtrillos</p>
+        <div class="home__filters-overlay"
+            [class.home__filters-overlay--open]="isFiltersOpen"
+            (click)="toggleFilters()">
+        </div>
+        
+        <aside app-filters 
+            class="home__filters"
+            [class.home__filters--open]="isFiltersOpen"
+            (filterChange)="onFilterChange($event)"
+            (close)="toggleFilters()">
         </aside>
 
         <div class="home__cards">
-            <div class="home__cards-section" *ngFor="let region of regions">
+            <div class="home__cards-section" *ngFor="let region of filteredRegions">
                 <h2 class="home__cards-region">{{ region.name }}</h2>
                 <div class="home__cards-grid">
                     <article app-card [data]="card" *ngFor="let card of region.cards"></article>
