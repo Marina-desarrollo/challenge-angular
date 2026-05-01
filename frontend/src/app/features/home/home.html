@@ -1,2 +1,30 @@
+<section class="home__hero">
+    <p>Aquí hero</p>
+</section>
 
-    <p>home works!</p>
+<section class="home__content">
+    <div class="home__intro">
+        <h1 class="home__intro-title">Vive tus propias aventuras</h1>
+        <p class="home__intro-subtitle">Para los que les gusta explorar y conocer mundo sin complejos</p>
+    </div>
+
+    
+    <div class="home__body">
+        <button class="home__filters-btn">
+            <img src="icons/filter-btn.png" alt="">
+            Ver filtros
+        </button>
+
+        <aside class="home__filters">
+            <p>filtrillos</p>
+        </aside>
+
+        <div class="home__cards">    
+            <h2 class="home__cards-region">Asia</h2>
+            <div class="home__cards-grid">
+                <article app-card [data]="card" *ngFor="let card of cards"></article>
+            </div>
+        </div>
+    </div>
+    
+</section>    

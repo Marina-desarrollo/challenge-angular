@@ -1,9 +1,165 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/variables-spacing' as *;
+@use '../../../styles/abstracts/variables-components' as *;
 
 .home {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: $spacing-mobile;    
+    
+    // --- Hero ---
+    &__hero {
+        width: 100%;
+    }
+
+    // --- Content principal ---
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-mobile;
+        padding: $padding-y-mobile 0;
+
+        @include respond-to('tablet-sm') {
+            padding: $padding-y-tablet $padding-x-tablet;
+            gap: rem(48);
+        }
+
+        @include respond-to('tablet-lg') {
+            padding: $padding-y-tablet $padding-x-tablet-lg;
+        }
+
+        @include respond-to('desktop') {
+            padding: $padding-desktop;
+        }
+    }
+
+    // --- Texto ---
+    &__intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(16);
+        text-align: center;
+        padding: 0 rem(32);
+
+        @include respond-to('tablet-sm') {
+            gap: rem(8);
+        }
+    }
+
+    &__intro-title {
+        font-size: $font-size-3xl;
+        line-height: rem(32);
+        font-family: 'Syne', sans-serif;
+        font-weight: 700;
+        color: #2F222F;
+
+        @include respond-to('tablet-sm') {
+            font-size: $font-size-4xl;
+            line-height: rem(34);
+        }
+
+        @include respond-to('tablet-lg') {
+            font-size: $font-size-5xl;
+            line-height: rem(36);
+        }
+
+        @include respond-to('desktop') {
+            font-size: $font-size-6xl;
+            line-height: rem(40);
+        }
+    }
+
+    &__intro-subtitle {
+        font-size: $font-size-lg;
+        color: #6B7D8D;
+        line-height: rem(24);
+        
+        @include respond-to('tablet-lg') {
+            font-size: $font-size-xl;
+            line-height: rem(26);
+        }
+    }    
+
+    // --- body: filtros y cards
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: rem(24);
+        padding: 0 $padding-x-mobile;
+
+        @include respond-to('tablet-sm') {
+            padding: 0 $spacing-tablet;
+        }
+
+        @include respond-to('desktop') {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: $spacing-desktop;
+            padding: 0;
+        }
+    }
+
+    // --- Botón filtros --- (no se ve en desktop)
+    &__filters-btn {
+        display: flex;
+        align-items: center;
+        gap: rem(8);
+        align-self: center;
+        font-size: $font-size-lg;
+        font-weight: 600;
+        line-height: rem(24);
+        border-radius: 280px;
+        border: 1px solid #EFEBED;
+        padding: 8px 14px;
+        background-color: #FAF7F5;   
+        
+        @include respond-to('tablet-lg') {
+            align-self: self-start;
+        }
+
+        @include respond-to('desktop') {
+            display: none;
+        }
+    }
+
+    &__filters {
+        display: none;
+
+        @include respond-to('desktop') {
+            display: block;
+            width: rem(220);
+            flex-shrink: 0;
+        }
+    }
+
+    // --- cards ---
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        gap: rem(16);
+        flex: 1;        
+    }    
+
+    &__cards-region {        
+        font-weight: 600;
+        color: $button-show-filter-text-default;  
+        font-size: $font-size-xl;
+        line-height: rem(24);
+    }
+
+    &__cards-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: rem(16);
+
+        @include respond-to('tablet-sm') {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond-to('tablet-lg') {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
 }
