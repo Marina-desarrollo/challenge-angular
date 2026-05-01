@@ -2,12 +2,17 @@
 
 // --- Espacios ---
 $spacing-mobile: rem(40);
-$spacing-desktop: rem(72);
+$spacing-tablet: rem(48);
+$spacing-desktop: rem(24);
 
-$padding-top-mobile: rem(56);
-$padding-bottom-mobile: rem(56);
-$padding-top-desktop: rem(72);
-$padding-bottom-desktop: rem(72);
+$padding-y-mobile: rem(56);
+$padding-x-mobile: rem(16);
+
+$padding-y-tablet: rem(56);
+$padding-x-tablet: rem(24);
+$padding-x-tablet-lg: rem(32);
+
+$padding-desktop: rem(72);
 
 // --- Container ---
 $container-mobile: rem(390);
@@ -20,7 +25,11 @@ $font-size-xs: rem(12);
 $font-size-sm: rem(14);
 $font-size-base: rem(16);
 $font-size-md: rem(18);
-$font-size-lg: rem(22);
-$font-size-xl: rem(24);
-$font-size-xxl: rem(34);
-$font-size-btn-lg: rem(20);
+$font-size-lg: rem(20);
+$font-size-xl: rem(22);
+$font-size-2xl: rem(24);
+$font-size-3xl: rem(30);
+$font-size-4xl: rem(32);
+$font-size-5xl: rem(34);
+$font-size-6xl: rem(38);
+$font-size-btn-lg: $font-size-lg; //20px
