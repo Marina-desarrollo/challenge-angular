@@ -1,0 +1,104 @@
+@use '../../../../styles/abstracts/mixins' as *;
+@use '../../../../styles/abstracts/variables-spacing' as *;
+@use '../../../../styles/abstracts/variables-components' as *;
+
+.checkbox {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: rem(8);
+    cursor: pointer;
+
+    //Inactivo
+    &__input {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    //Cuadradito
+    &__box {
+        svg {
+            display: none;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(16);
+        height: rem(16);
+        flex-shrink: 0;
+        border-radius: rem(4);
+        border: 1.5px solid $form-checkbox-box-border-default;
+        background-color: $form-checkbox-box-background-default;
+        transition: background-color 0.2s ease, border-color 0.2s ease; 
+
+        // Checked
+        &--checked {
+            background-color: $form-checkbox-box-background-selected;
+            border-color: $form-checkbox-box-border-selected;
+    
+            svg {
+                display: block;
+            }
+        }
+    }
+    
+    &__check {
+        display: none;
+        color: $form-checkbox-check-icon-default;
+    }
+
+    &__label {
+        font-size: $font-size-base;
+        font-weight: 500;
+        color: $form-checkbox-text-default;
+        flex: 1;
+    }
+
+    &__info {
+        position: relative;
+
+        &:hover .checkbox__tooltip {
+            display: block;
+        }
+
+        img {
+            width: rem(16);
+            height: rem(16);
+        }
+    }
+
+    &__tooltip {
+        display: none;
+        position: absolute;
+        bottom: rem(28);
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $card-background-default;
+        border: 1px solid $overlay-border-default;
+        border-radius: rem(8);
+        padding: rem(8) rem(12);
+        font-size: $font-size-sm;
+        white-space: nowrap;
+        box-shadow: 0px 4px 8px 0px #00000033;
+        z-index: 10;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: rem(6) solid transparent;
+            border-right: rem(6) solid transparent;
+            border-top: rem(6) solid $card-background-default;  
+        }
+    }
+
+    &:hover &__box {
+        border-color: $form-checkbox-box-border-hover;
+    }
+
+}
