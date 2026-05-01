@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'sass:map';
 
 // Breakpoints basados en lo que hay en Figma
 $breakpoints: (
@@ -8,7 +9,7 @@ $breakpoints: (
 );
 
 @mixin respond-to($bp) {
-  @media (min-width: map-get($breakpoints, $bp)) {
+  @media (min-width: map.get($breakpoints, $bp)) {
     @content;
   }
 }

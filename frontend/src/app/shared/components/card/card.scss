@@ -6,21 +6,21 @@
     display: flex;
     flex-direction: column;
     background-color: $card-background-default;
-    border-radius: rem(12);
+    border-radius: rem(24);
     overflow: visible;
-    box-shadow: 0 rem(2) rem(8) rgba(0, 0, 0, 0.08);
+    box-shadow:  0px 4px 8px 0px #00000033;
     position: relative;
-    transition: box-shadow 0.2 ease;
+    transition: box-shadow 0.2s ease;
 
     &:hover {
         box-shadow: 0 rem(4) rem(16) rgba(0, 0, 0, 0.12);
-    }
+    }    
 
     &__image-wrapper {
         position: relative;
         width: 100%;
         aspect-ratio: 16/9;
-        border-radius: rem(12) rem(12) 0 0;
+        border-radius: rem(24) rem(24) 0 0;
         overflow: hidden;
     }
 
@@ -39,24 +39,34 @@
     &__content {
         display: flex;
         flex-direction: column;
+        gap: rem(8);        
+    }
+
+    &__info {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
         gap: rem(8);
         padding: rem(16);
     }
 
     &__meta {
+        font-family: 'Syne', sans-serif;
         display: flex;
-        align-items: center;
-        gap: rem(8);
-        font-size: $font-size-sm;        
+        gap: rem(6);
+        align-items: center;            
+        font-size: $font-size-sm;
+        line-height: rem(18);
     }
 
     &__destination {
-        color: $card-breakdown-foreground-default;
+        color: $card-title-default;
         font-weight: 700;
     }
 
     &__duration {
         color: $card-text-default;
+        font-weight: 500;
     }
  
     &__title {
@@ -68,25 +78,53 @@
  
     &__footer {
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;        
+        padding: rem(12) rem(16);
+        gap: rem(8);        
+        background-color: $card-circuit-bottom-bar-background-default;
+
+        @include respond-to('tablet-sm') {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+    }
+
+    &__footer-top {
+        display: flex;
         justify-content: space-between;
-        gap: rem(8);
-        margin-top: rem(8);
+        align-items: flex-end;
+
+        @include respond-to('tablet-sm') {
+            flex-direction: column;
+            flex: 1;
+            align-items: flex-start;         
+        }
+    }
+
+    &__reserve-btn {
+        width: 100%;
+
+        @include respond-to('tablet-sm') {
+            flex: 1;
+        }
     }
  
     &__price-wrapper {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         gap: rem(2);
     }
  
     &__price-label {
         font-size: $font-size-xs;
-        color: $card-text-default;
+        color: $card-top-price-text;
     }
  
     &__price {
         font-size: $font-size-xl;
+        line-height: rem(24);
         font-weight: 700;
         color: $card-price;
     }
@@ -95,43 +133,77 @@
         display: flex;
         align-items: center;
         gap: rem(4);
-        font-size: $font-size-xs;
-        font-weight: 700;
+        font-size: $font-size-sm;
+        text-decoration: underline;
+        line-height: rem(16);
+        font-weight: 600;
         color: $card-breakdown-foreground-default;
         transition: color 0.2s ease;
  
         &:hover {
             color: $card-breakdown-foreground-hover;
         }
+
+        @include respond-to('tablet-sm'){
+            order: 1;
+        }
     }
  
     // Modal desglose
     &__breakdown {
-        position: absolute;
-        bottom: rem(48);
-        left: 0;
-        right: 0;
+        position: fixed;
+        inset: 0;
         background-color: $overlay-background-default;
-        border: 1px solid $overlay-border-default;
-        border-radius: rem(12);
-        padding: rem(16);
+        border-radius: 0;        
         display: flex;
-        flex-direction: column;
-        gap: rem(12);
-        box-shadow: 0 rem(8) rem(24) rgba(0, 0, 0, 0.12);
-        z-index: 10;
+        flex-direction: column;        
+        z-index: 100;
+
+        @include respond-to('tablet-sm') {
+            position: fixed;
+            inset: auto;
+            top: 50%;
+            left: 50%;
+            width: 55%;
+            height: auto;
+            transform: translate(-50%, -50%);
+            border-radius: rem(24);
+            background-color: $overlay-background-default;
+            border: 1px solid $overlay-border-default;                       
+            display: flex;
+            flex-direction: column;            
+            box-shadow: 0px 4px 8px 0px #00000033;
+            z-index: 10;
+        }
+
+        @include respond-to('tablet-lg') {
+            width: 40%;
+        }
+
+        @include respond-to('desktop') {
+            width: 25%;
+        }
     }
  
     &__breakdown-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: rem(16);
+        background-color: $overlay-top-bar-default;
+        border-radius: 0;
+        border: 1px solid $overlay-border-default;
+
+        @include respond-to('tablet-sm') {
+            border-radius: rem(24) rem(24) 0 0;
+        }
     }
- 
+    
     &__breakdown-title {
-        font-size: $font-size-base;
+        font-size: $font-size-md;
         font-weight: 700;
-        color: $overlay-title-default;
+        line-height: rem(24);
+        color: $overlay-bar-text-default;
     }
  
     &__breakdown-close {
@@ -143,6 +215,13 @@
             color: $overlay-close-icon-hover;
         }
     }
+
+    &__breakdown-content {
+        display: flex;
+        flex-direction: column;
+        padding: rem(16) rem(24);
+        gap: rem(24);
+    } 
  
     &__breakdown-meta {
         display: flex;
@@ -152,34 +231,64 @@
     }
  
     &__breakdown-destination {
-        color: $card-breakdown-foreground-default;
+        font-family: 'Syne', sans-serif;
+        font-size: $font-size-md;
+        line-height: rem(24);
+        color: $overlay-title-default;
         font-weight: 700;
     }
  
     &__breakdown-duration {
-        color: $overlay-text-default;
+        font-family: 'Syne', sans-serif;
+        font-size: $font-size-md;
+        line-height: rem(24);
+        color: $overlay-title-default;
+        font-weight: 500;
     }
  
     &__breakdown-list {
         display: flex;
         flex-direction: column;
-        gap: rem(8);
+        gap: rem(16);
     }
  
     &__breakdown-item {
         display: flex;
         justify-content: space-between;
-        font-size: $font-size-sm;
-        color: $overlay-text-default;
+        
+        span:first-child {
+            font-size: $font-size-base;
+            line-height: rem(20);
+            font-weight: 500;
+            color: $overlay-bar-text-default;
+        }
+
+        span:last-child {
+            font-size: $font-size-md;
+            line-height: rem(20);
+            font-weight: 700;
+            color: $overlay-bar-text-default;
+        }
     }
  
-    &__breakdown-total {
+    &__breakdown-footer {
         display: flex;
         justify-content: space-between;
-        font-size: $font-size-base;
-        font-weight: 700;
-        color: $overlay-title-default;
-        padding-top: rem(12);
+        padding: rem(16) rem(24);        
         border-top: 1px solid $overlay-border-default;
+
+        span:first-child {
+            font-size: $font-size-md;
+            line-height: rem(22);
+            font-weight: 700;
+            color: $overlay-bar-text-default;
+        }
+
+        span:last-child {
+            font-size: $font-size-xl;
+            line-height: rem(24);
+            font-weight: 700;
+            color: $overlay-price-default;
+        }
     }
 }

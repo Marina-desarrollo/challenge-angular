@@ -19,11 +19,13 @@
             <p>filtrillos</p>
         </aside>
 
-        <div class="home__cards">    
-            <h2 class="home__cards-region">Asia</h2>
-            <div class="home__cards-grid">
-                <article app-card [data]="card" *ngFor="let card of cards"></article>
-            </div>
+        <div class="home__cards">
+            <div class="home__cards-section" *ngFor="let region of regions">
+                <h2 class="home__cards-region">{{ region.name }}</h2>
+                <div class="home__cards-grid">
+                    <article app-card [data]="card" *ngFor="let card of region.cards"></article>
+                </div>
+            </div>  
         </div>
     </div>
     

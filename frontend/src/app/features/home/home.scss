@@ -29,7 +29,7 @@
         }
 
         @include respond-to('desktop') {
-            padding: $padding-desktop;
+            padding: $padding-desktop $padding-x-desktop;
         }
     }
 
@@ -137,9 +137,15 @@
     &__cards {
         display: flex;
         flex-direction: column;
-        gap: rem(16);
+        gap: rem(24);
         flex: 1;        
-    }    
+    }
+    
+    &__cards-section {
+        display: flex;
+        flex-direction: column;
+        gap: rem(16);
+    }
 
     &__cards-region {        
         font-weight: 600;
@@ -151,7 +157,7 @@
     &__cards-grid {
         display: grid;
         grid-template-columns: 1fr;
-        gap: rem(16);
+        gap: rem(24);
 
         @include respond-to('tablet-sm') {
             grid-template-columns: repeat(2, 1fr);

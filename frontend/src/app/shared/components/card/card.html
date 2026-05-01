@@ -1,0 +1,65 @@
+<div class="card__image-wrapper">
+    <img [src]="data.image" [alt]="data.title" class="card__image">
+    <span app-tag variant="primary" [label]="data.tag" class="card__tag"></span>
+</div>
+
+<div class="card__content">
+    <div class="card__info">
+        <p class="card__meta">
+            <span class="card__destination">{{ data.destination }}</span>
+            <span class="card__duration">{{ data.duration }}</span>
+        </p>    
+        <h3 class="card__title">{{ data.title }}</h3>
+    </div>
+
+    <div class="card__footer">
+        <div class="card__footer-top">
+            <button class="card__breakdown-btn" (click)="toggleBreakdown()">
+                Ver desglose
+                <img src="icons/chevronDown.svg" alt="">
+            </button>
+            <div class="card__price-wrapper">
+                <span class="card__price-label">Desde</span>
+                <span class="card__price">{{ data.price | currency:'EUR':'symbol':'1.2-2':'es' }}</span>
+            </div>
+        </div>
+
+        <button app-button variant="secondary" size="sm" class="card__reserve-btn">Reservar</button>
+    </div>
+
+</div>
+<!-- Modal desglose precios -->
+<div class="card__breakdown" *ngIf="isBreakdownOpen">
+    <div class="card__breakdown-header">
+        <p class="card__breakdown-title">Desglose de precios</p>
+        <button class="card__breakdown-close" (click)="toggleBreakdown()">
+            <img src="icons/close.svg" alt="">
+        </button>
+    </div>
+    
+    <div class="card__breakdown-content">
+        <p class="card__breakdown-meta">
+            <span class="card__breakdown-destination">{{ data.destination }}</span>
+            <span class="card__breakdown-duration">{{ data.duration }}</span>
+        </p>    
+        <ul class="card__breakdown-list">
+            <li class="card__breakdown-item">
+                <span>{{ data.breakdown.priceBeforeTax.label }}</span>
+                <span>{{ data.breakdown.priceBeforeTax.value | currency:'EUR':'symbol':'1.2-2':'es' }}</span>
+            </li>
+            <li class="card__breakdown-item">
+                <span>{{ data.breakdown.tax.label }}</span>
+                <span>{{ data.breakdown.tax.value | currency:'EUR':'symbol':'1.2-2':'es' }}</span>
+            </li>
+            <li class="card__breakdown-item">
+                <span>{{ data.breakdown.loremIpsum.label }}</span>
+                <span>{{ data.breakdown.loremIpsum.value | currency:'EUR':'symbol':'1.2-2':'es' }}</span>
+            </li>                
+        </ul>
+    </div>
+    <div class="card__breakdown-footer">
+        <span>{{ data.breakdown.finalPrice.label }}</span>
+        <span>{{ data.breakdown.finalPrice.value | currency:'EUR':'symbol':'1.2-2':'es' }}</span>
+    </div>
+
+</div>
