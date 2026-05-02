@@ -1,0 +1,229 @@
+@use '../../../../styles/abstracts/mixins' as *;
+@use '../../../../styles/abstracts/variables-spacing' as *;
+@use '../../../../styles/abstracts/variables-global' as *;
+@use '../../../../styles/abstracts/variables-components' as *;
+
+.slider {
+    display: block;
+    width: 100%;
+    position: relative;
+    height: rem(300);
+
+    @include respond-to('tablet-sm') {
+        height: rem(400);
+    }
+
+    @include respond-to('desktop') {
+        height: rem(500);
+    }
+
+    &__slide {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    &__content {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;        
+        justify-content: center;
+        align-items: center;
+        padding: rem(45) rem(60);
+        text-align: center;
+        gap: rem(20);
+        
+        @include respond-to('tablet-sm') {
+            max-width: 100%;
+            width: rem(584);
+            margin: 0 auto;            
+            padding: rem(32) rem(40);
+        }
+    }
+
+    &__tag {
+        font-family: 'Poppins', sans-serif;
+        position: absolute;
+        bottom: rem(336);
+        left: rem(16);
+        z-index: 2;
+        background-color: $color-brand-pink;
+        padding: rem(6) rem(16);
+        border-radius: rem(8);
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: $font-size-2xl;
+        line-height: rem(28);
+        color: $color-brand-basic-000-white;
+
+        // Linea
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);            
+            height: rem(85);
+            border: 1px solid $color-brand-pink;            
+        }
+        
+        //Circulo            
+        &::before {
+            content: '';
+            position: absolute;
+            top: calc(100% + rem(80));
+            left: 50%;
+            transform: translateX(-50%);
+            width: rem(15);
+            height: rem(15);
+            border-radius: 50%;
+            background-color: $color-brand-pink;
+
+            //Circulo de fuera
+            box-shadow: 0 0 0 0 rgba($color-brand-pink, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba($color-brand-pink, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 rem(12) rgba($color-brand-pink, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba($color-brand-pink, 0);
+            }
+        }
+
+            @include respond-to('tablet-sm') {
+                top: rem(320);
+                bottom: unset;
+                left: rem(-45);
+                
+                &::after {
+                    bottom: 100%;
+                    top: unset;
+                    height: rem(50);
+                }
+
+                &::before {
+                    top: unset;
+                    bottom: calc(100% + rem(50));
+                }
+            }
+
+        @include respond-to('tablet-lg') {
+            display: none;
+        }
+    }
+
+    &__title {
+        font-family: 'Syne', sans-serif;
+        font-size: $font-size-4xl;
+        font-weight: 700;
+        color: $hero-title-default;
+        line-height: rem(36);
+
+        @include respond-to('tablet-sm') {
+            font-size: $font-size-5xl;
+            font-weight: rem(38);
+        }
+
+        @include respond-to('tablet-lg') {
+            line-height: rem(30);
+        }
+
+        @include respond-to('desktop') {
+            font-size: $font-size-3xl;
+            line-height: rem(26);
+        }
+    }
+
+    &__description {
+        font-size: $font-size-2xl;
+        line-height: rem(28);
+        font-weight: 500;
+        color: $hero-subtitle-default;
+
+        @include respond-to('tablet-sm') {
+            line-height: rem(30);
+        }
+
+        @include respond-to('desktop') {
+            font-size: $font-size-lg;
+            line-height: rem(26);
+        }
+    }
+
+    &__btn {        
+        margin-top: rem(48);
+        width: rem(246);
+
+        &:hover {
+            background-color: $button-accent-background-hover;
+        }
+
+        @include respond-to('tablet-sm') {
+            width: rem(200);
+            height: rem(48);
+        }
+    }
+
+    // Botones prev/next
+    &__prev,
+    &__next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+
+    &__prev {
+        left: 0rem;
+
+        img {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__next {
+        right: rem(1);        
+    }
+
+    // Paginación
+    &__pagination {
+        position: absolute;
+        bottom: rem(16);
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        display: flex;
+        gap: rem(8);
+    }
+
+    &__bullet {
+        width: rem(10);
+        height: rem(10);
+        border-radius: 50%;
+        border: 1px solid $indicator-slider-border-selected-default;
+        background-color: $indicator-slider-background-default;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &--active {
+            background-color: $indicator-slider-background-selected-default;
+        }
+    }
+}

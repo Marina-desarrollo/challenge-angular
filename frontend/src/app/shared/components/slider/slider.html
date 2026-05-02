@@ -1,0 +1,32 @@
+<div class="slider__slide" [style.backgroundImage]="'url(' + slides[currentIndex].image + ')'">
+  
+  <div class="slider__content">
+    <span class="slider__tag" *ngIf="slides[currentIndex].tag">
+      {{ slides[currentIndex].tag }}
+    </span>
+    <h2 class="slider__title">{{ slides[currentIndex].title }}</h2>
+    <p class="slider__description">{{ slides[currentIndex].description }}</p>
+    <button app-button variant="accent" size="lg" class="slider__btn">
+        {{ slides[currentIndex].buttonText }}
+    </button>
+  </div>
+
+</div>
+
+<!-- Botones navegación -->
+<button class="slider__prev" (click)="prev()">
+    <img src="icons/sliderNavigation.svg" alt="Atrás">
+</button>
+<button class="slider__next" (click)="next()">
+    <img src="icons/sliderNavigation.svg" alt="Siguiente">
+</button>
+
+<!-- Paginación -->
+<div class="slider__pagination">
+  <span 
+    *ngFor="let slide of slides; let i = index"
+    class="slider__bullet"
+    [class.slider__bullet--active]="i === currentIndex"
+    (click)="goTo(i)">
+  </span>
+</div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Card, CardData } from '../../shared/components/card/card';
 import { Filters } from '../filters/filters';
+import { Slider } from '../../shared/components/slider/slider';
 
 interface Region {
   name: string;
@@ -9,7 +10,7 @@ interface Region {
 }
 @Component({
   selector: 'main[app-home]',
-  imports: [CommonModule, Card, Filters],
+  imports: [CommonModule, Card, Filters, Slider],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
