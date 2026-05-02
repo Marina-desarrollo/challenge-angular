@@ -194,7 +194,8 @@
         gap: rem(16);
     }
 
-    &__cards-region {        
+    &__cards-region {
+        font-family: 'Syne', sans-serif;        
         font-weight: 600;
         color: $button-show-filter-text-default;  
         font-size: $font-size-xl;
