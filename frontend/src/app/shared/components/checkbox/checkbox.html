@@ -1,16 +1,17 @@
 <input 
-  type="checkbox" 
+  type="checkbox"
+  [id]="'checkbox-' + label"
   class="checkbox__input"
   [checked]="checked"
   (change)="onChange($event)"
 />
-<span class="checkbox__box" [class.checkbox__box--checked]="checked">
+<span aria-label="true" class="checkbox__box" [class.checkbox__box--checked]="checked">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
         <path d="M3.2002 8.00029L6.40109 11.1998L12.8002 4.80078" stroke="#622F60" stroke-width="1.80001" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
 </span>
 <span class="checkbox__label">{{ label }}</span>
-<span class="checkbox__info">
+<span class="checkbox__info" [attr.aria-describedby]="'tooltip-' + label">
   <img src="icons/tooltip.svg" alt="Info" />
-  <span class="checkbox__tooltip">{{ tooltip }}</span>
+  <span class="checkbox__tooltip" role="tooltip" [id]="'tooltip-' + label">{{ tooltip }}</span>
 </span>

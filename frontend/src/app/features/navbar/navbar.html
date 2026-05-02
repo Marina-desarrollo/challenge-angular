@@ -37,11 +37,15 @@
 </div>
 
 <div class="navbar__overlay"
-     [class.navbar__overlay--open]="isMenuOpen"
-     (click)="toggleMenu()">
+    aria-label="true"
+    [class.navbar__overlay--open]="isMenuOpen"
+    (click)="toggleMenu()">
 </div>
 
 <div class="navbar__drawer"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Menú de navegación"
      [class.navbar__drawer--open]="isMenuOpen">
   <button class="navbar__close-btn"
           aria-label="Cerrar menú"

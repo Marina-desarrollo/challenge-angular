@@ -4,7 +4,7 @@ import { Button } from '../../shared/components/button/button';
 @Component({
   selector: 'nav[app-navbar]',
   imports: [Button],
-  host: { class: 'navbar' },
+  host: { class: 'navbar', 'aria-label': 'Menu principal' },
   encapsulation: ViewEncapsulation.None,
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',

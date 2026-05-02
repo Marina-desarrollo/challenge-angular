@@ -29,10 +29,14 @@
 
 </div>
 <!-- Modal desglose precios -->
-<div class="card__breakdown" *ngIf="isBreakdownOpen">
+<div class="card__breakdown" 
+            *ngIf="isBreakdownOpen"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Desglose de precios">
     <div class="card__breakdown-header">
         <p class="card__breakdown-title">Desglose de precios</p>
-        <button class="card__breakdown-close" (click)="toggleBreakdown()">
+        <button class="card__breakdown-close" aria-label="Cerrar desglose" (click)="toggleBreakdown()">
             <img src="icons/close.svg" alt="">
         </button>
     </div>
