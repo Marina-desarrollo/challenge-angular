@@ -2,6 +2,7 @@ import { Component, Output, EventEmitter, ViewEncapsulation } from '@angular/cor
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Checkbox } from '../../shared/components/checkbox/checkbox';
+import { aventuraOptions, AventuraOption } from '../../data/filters.data';
 
 @Component({
   selector: 'aside[app-filters]',
@@ -21,16 +22,7 @@ export class Filters {
   minPrice: number | null = null;
   maxPrice: number | null = null;
 
-  aventuraOptions = [
-    { label: 'Quads', checked: false, tooltip: 'prueba quad' },
-    { label: 'Parapente', checked: false, tooltip: 'prueba parapente' },
-    { label: 'Rafting', checked: false, tooltip: 'prueba rafting' },
-    { label: 'Explora', checked: false, tooltip: 'prueba exploración' },
-    { label: 'Buceo', checked: false, tooltip: 'prueba buceo' },
-    { label: 'Paracaídas', checked: false, tooltip: 'prueba paracaídas' },
-    { label: 'Snowboard', checked: false, tooltip: 'prueba snowboard' },
-    { label: 'Surf', checked: false, tooltip: 'prueba surf' },
-  ];
+  aventuraOptions: AventuraOption[] = [...aventuraOptions];
 
   toggleAventura() {
     this.isAventuraOpen = !this.isAventuraOpen;    
