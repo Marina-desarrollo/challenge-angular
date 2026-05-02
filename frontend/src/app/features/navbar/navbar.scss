@@ -140,15 +140,26 @@
 
         @include respond-to('tablet-lg') {
             display: flex;
-            flex-direction: row;
-            gap: rem(72);
+            flex-direction: row;            
             justify-content: center;
+            gap: rem(16);
+        }
+
+        @include respond-to('desktop') {
+            gap: rem(72);
         }
     }
     
     &__menu-item {
+        display: flex;
+        align-items: center;
+
         &--separated {
             margin-left: rem(22);
+
+            @include respond-to('tablet-lg') {
+                margin-left: 0;
+            }
         }
     }
 
