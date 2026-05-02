@@ -10,6 +10,7 @@
     // --- Hero ---
     &__hero {
         width: 100%;
+        min-height: rem(400);
     }
 
     // --- Content principal ---
@@ -25,11 +26,17 @@
         }
 
         @include respond-to('tablet-lg') {
-            padding: $padding-y-tablet $padding-x-tablet-lg;
+            max-width: rem(840);
+            width: 100%;
+            padding: $padding-y-tablet 0;
+            margin: 0 auto;
         }
 
         @include respond-to('desktop') {
-            padding: $padding-desktop $padding-x-desktop;
+            padding: $padding-desktop 0;
+            max-width: rem(1128);
+            width: 100%;
+            margin: 0 auto;
         }
     }
 
@@ -88,8 +95,8 @@
         gap: rem(24);
         padding: 0 $padding-x-mobile;
 
-        @include respond-to('tablet-sm') {
-            padding: 0 $spacing-tablet;
+        @include respond-to('tablet-lg') {            
+            padding: 0;
         }
 
         @include respond-to('desktop') {
